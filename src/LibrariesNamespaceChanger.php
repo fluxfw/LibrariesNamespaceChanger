@@ -100,22 +100,21 @@ final class LibrariesNamespaceChanger {
 		$plugin_name = $this->getPluginName();
 
 		if (!empty($plugin_name)) {
+
 			$libraries = array_map(function (/*string*/
 				$library)/*: string*/ {
 				return __DIR__ . "/../../" . strtolower($library);
 			}, self::$libraries);
 
+			$files = [];
 			foreach ($libraries as $library => $folder) {
 				if (is_dir($folder)) {
+					$this->getFiles($folder, $files);
+				}
+			}
 
-					$files = $this->getFiles($folder);
-					foreach ($libraries as $library_ => $folder_) {
-						if ($library_ !== $library) {
-							if (is_dir($folder_)) {
-								$this->getFiles($folder, $files);
-							}
-						}
-					}
+			foreach ($libraries as $library => $folder) {
+				if (is_dir($folder)) {
 
 					foreach ($files as $file) {
 						$code = file_get_contents($file);
@@ -152,11 +151,9 @@ final class LibrariesNamespaceChanger {
 	/**
 	 * @param string $folder
 	 * @param array  $files
-	 *
-	 * @return array
 	 */
 	private function getFiles(/*string*/
-		$folder, &$files = [])/*: array*/ {
+		$folder, &$files = [])/*: void*/ {
 		$paths = scandir($folder);
 
 		foreach ($paths as $file) {
@@ -173,7 +170,5 @@ final class LibrariesNamespaceChanger {
 				}
 			}
 		}
-
-		return $files;
 	}
 }
