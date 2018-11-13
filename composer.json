@@ -1,6 +1,6 @@
 {
   "name": "srag/librariesnamespacechanger",
-  "description": "LibrariesNamespaceChanger",
+  "description": "Change namespace of libraries to plugin namespace",
   "type": "library",
   "keywords": [
     "ILIAS",

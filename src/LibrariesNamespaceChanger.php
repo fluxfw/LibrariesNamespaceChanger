@@ -23,13 +23,13 @@ final class LibrariesNamespaceChanger {
 	 * @var array
 	 */
 	private static $libraries = [
-		"ActiveRecordConfig",
-		"BexioCurl",
-		"CustomInputGUIs",
-		"DIC",
-		"JasperReport",
-		"JiraCurl",
-		"RemovePluginDataConfirm"
+		"ActiveRecordConfig" => "ActiveRecordConfig",
+		"BexioCurl" => "BexioCurl",
+		"CustomInputGUIs" => "CustomInputGUIs",
+		"DIC" => "DIC",
+		"JasperReport" => "JasperReport",
+		"JiraCurl" => "JiraCurl",
+		"RemovePluginDataConfirm" => "RemovePluginDataConfirm"
 	];
 	/**
 	 * @var array
@@ -100,11 +100,22 @@ final class LibrariesNamespaceChanger {
 		$plugin_name = $this->getPluginName();
 
 		if (!empty($plugin_name)) {
-			foreach (self::$libraries as $library) {
-				$folder = __DIR__ . "/../../" . strtolower($library);
+			$libraries = array_map(function (/*string*/
+				$library)/*: string*/ {
+				return __DIR__ . "/../../" . strtolower($library);
+			}, self::$libraries);
 
+			foreach ($libraries as $library => $folder) {
 				if (is_dir($folder)) {
+
 					$files = $this->getFiles($folder);
+					foreach ($libraries as $library_ => $folder_) {
+						if ($library_ !== $library) {
+							if (is_dir($folder_)) {
+								$this->getFiles($folder, $files);
+							}
+						}
+					}
 
 					foreach ($files as $file) {
 						$code = file_get_contents($file);
