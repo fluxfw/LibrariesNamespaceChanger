@@ -5,6 +5,9 @@ Connect to Jira via Curl
 #### Composer
 First add the following to your `composer.json` file:
 ```json
+"require": {
+  "srag/librariesnamespacechanger": ">=0.1.0"
+},
 "scripts": {
     "pre-autoload-dump": "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces"
   }
