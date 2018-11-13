@@ -9,7 +9,7 @@ First add the following to your `composer.json` file:
   "srag/librariesnamespacechanger": ">=0.1.0"
 },
 "scripts": {
-    "pre-autoload-dump": "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces"
+    "post-autoload-dump": "srag\\LibrariesNamespaceChanger\\LibrariesNamespaceChanger::rewriteLibrariesNamespaces"
   }
 ```
 
