@@ -1,4 +1,4 @@
-Connect to Jira via Curl
+LibrariesNamespaceChanger
 
 ### Usage
 
