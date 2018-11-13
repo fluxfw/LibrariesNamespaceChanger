@@ -1,4 +1,4 @@
-LibrariesNamespaceChanger
+Change the namespace of the libraries on dump-autoload to a plugin specific namespace
 
 ### Usage
 
@@ -13,11 +13,20 @@ First add the following to your `composer.json` file:
   }
 ```
 
-And run a `composer install`.
+This script will change the namespace of the libraries on dump-autoload to a plugin specific namespace.
 
-If you deliver your plugin, the plugin has it's own copy of this library and the user doesn't need to install the library.
+For instance the Library `DIC` and the the plugin `HelpMe`, the namespace is `srag\DIC\HelpMe\`.
 
-Hint: Because of multiple autoloaders of plugins, it could be, that different versions of this library exists and suddenly your plugin use an old version of an other plugin! So you should keep up to date your plugin with `composer update`.
+So you can force to use your libraries classes in the `vendor` folder of your plugin and come not in conflict to other plugins with different library versions and you don't need to adjust your plugins to newer library versions until you run `composer update` on your plugin.
+
+It support the follow libraries:
+* [srag/activerecordconfig](https://packagist.org/packages/srag/activerecordconfig)
+* [srag/bexiocurl](https://packagist.org/packages/srag/bexiocurl)
+* [srag/custominputguis](https://packagist.org/packages/srag/custominputguis)
+* [srag/dic](https://packagist.org/packages/srag/dic)
+* [srag/jasperreport](https://packagist.org/packages/srag/jasperreport)
+* [srag/jiracurl](https://packagist.org/packages/srag/jiracurl)
+* [srag/removeplugindataconfirm](https://packagist.org/packages/srag/removeplugindataconfirm)
 
 ### Dependencies
 * PHP >=5.6
