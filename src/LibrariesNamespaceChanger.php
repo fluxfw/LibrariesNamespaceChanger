@@ -69,7 +69,7 @@ final class LibrariesNamespaceChanger {
 	 * @param Event $event
 	 */
 	private function __construct(Event $event) {
-		$this->event = event;
+		$this->event = $event;
 	}
 
 
