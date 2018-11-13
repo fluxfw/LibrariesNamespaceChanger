@@ -10,6 +10,8 @@ use Composer\Script\Event;
  * @package srag\LibrariesNamespaceChanger
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
+ *
+ * @access  package
  */
 final class LibrariesNamespaceChanger {
 
@@ -22,7 +24,11 @@ final class LibrariesNamespaceChanger {
 	 */
 	private static $libraries = [
 		"ActiveRecordConfig",
+		"BexioCurl",
+		"CustomInputGUIs",
 		"DIC",
+		"JasperReport",
+		"JiraCurl",
 		"RemovePluginDataConfirm"
 	];
 	/**
@@ -33,6 +39,18 @@ final class LibrariesNamespaceChanger {
 		"md",
 		"php"
 	];
+	/**
+	 * @var string
+	 *
+	 * @access package
+	 */
+	const PLUGIN_NAME_REG_EXP = "/\/([A-Za-z0-9_]+)\/vendor\//";
+	/**
+	 * @var string
+	 *
+	 * @access package
+	 */
+	const SRAG = "srag";
 
 
 	/**
@@ -51,6 +69,8 @@ final class LibrariesNamespaceChanger {
 
 	/**
 	 * @param Event $event
+	 *
+	 * @access package
 	 */
 	public static function rewriteLibrariesNamespaces(Event $event) {
 		self::getInstance($event)->doRewriteLibrariesNamespaces();
@@ -77,18 +97,25 @@ final class LibrariesNamespaceChanger {
 	 *
 	 */
 	private function doRewriteLibrariesNamespaces()/*: void*/ {
-		$plugin_namespace = $this->getPluginNamespace();
+		$plugin_name = $this->getPluginName();
 
-		foreach (self::$libraries as $library) {
-			$folder = __DIR__ . "/../../" . strtolower($library);
+		if (!empty($plugin_name)) {
+			foreach (self::$libraries as $library) {
+				$folder = __DIR__ . "/../../" . strtolower($library);
 
-			$files = $this->getFiles($folder);
+				if (is_dir($folder)) {
+					$files = $this->getFiles($folder);
 
-			foreach ($files as $file) {
-				$code = file_get_contents($file);
-				$code = str_replace("srag\\" . $library, $plugin_namespace . "\\" . $library, $code);
-				$code = str_replace("srag\\\\" . $library, $plugin_namespace . "\\\\" . $library, $code);
-				file_put_contents($file, $code);
+					foreach ($files as $file) {
+						$code = file_get_contents($file);
+
+						$code = str_replace(self::SRAG . "\\" . $library, self::SRAG . "\\" . $library . "\\" . $plugin_name, $code);
+
+						$code = str_replace(self::SRAG . "\\\\" . $library, self::SRAG . "\\" . $library . "\\\\" . $plugin_name, $code);
+
+						file_put_contents($file, $code);
+					}
+				}
 			}
 		}
 	}
@@ -97,16 +124,17 @@ final class LibrariesNamespaceChanger {
 	/**
 	 * @return string
 	 */
-	private function getPluginNamespace()/*: string*/ {
-		$composer_json_file = __DIR__ . "/../../../../composer.json";
+	private function getPluginName()/*: string*/ {
+		$matches = [];
+		preg_match(self::PLUGIN_NAME_REG_EXP, __DIR__, $matches);
 
-		$composer_json = json_encode(file_get_contents($composer_json_file));
+		if (is_array($matches) && count($matches) >= 2) {
+			$plugin_name = $matches[1];
 
-		reset($composer_json->autoload->{"psr-4"});
-
-		$plugin_namespace = key($composer_json->autoload->{"psr-4"});
-
-		return $plugin_namespace;
+			return $plugin_name;
+		} else {
+			return "";
+		}
 	}
 
 
@@ -121,7 +149,7 @@ final class LibrariesNamespaceChanger {
 		$paths = scandir($folder);
 
 		foreach ($paths as $file) {
-			if ($file !== "." && $file .= "..") {
+			if ($file !== "." && $file !== "..") {
 				$path = $folder . "/" . $file;
 
 				if (is_dir($path)) {
