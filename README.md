@@ -24,7 +24,7 @@ This script will change the namespace of the libraries on dump-autoload to a plu
 
 For instance the Library `DIC` and the the plugin `HelpMe`, the base namespace is `srag\DIC\HelpMe\`.
 
-So you have to adjust it's namespaces in your `classes` or `src` folder. You can use the replace feature of your IDE.
+So you have to adjust it's namespaces in your code such in `classes` or `src` folder. You can use the replace feature of your IDE.
 
 So you can force to use your libraries classes in the `vendor` folder of your plugin and come not in conflict to other plugins with different library versions and you don't need to adjust your plugins to newer library versions until you run `composer update` on your plugin.
 
