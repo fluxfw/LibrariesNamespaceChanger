@@ -42,13 +42,13 @@ final class LibrariesNamespaceChanger {
 	/**
 	 * @var string
 	 *
-	 * @access package
+	 * @internal
 	 */
 	const PLUGIN_NAME_REG_EXP = "/\/([A-Za-z0-9_]+)\/vendor\//";
 	/**
 	 * @var string
 	 *
-	 * @access package
+	 * @internal
 	 */
 	const SRAG = "srag";
 
@@ -70,7 +70,7 @@ final class LibrariesNamespaceChanger {
 	/**
 	 * @param Event $event
 	 *
-	 * @access package
+	 * @internal
 	 */
 	public static function rewriteLibrariesNamespaces(Event $event) {
 		self::getInstance($event)->doRewriteLibrariesNamespaces();
