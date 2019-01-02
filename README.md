@@ -33,6 +33,7 @@ It support the follow libraries:
 * [srag/bexiocurl](https://packagist.org/packages/srag/bexiocurl)
 * [srag/custominputguis](https://packagist.org/packages/srag/custominputguis)
 * [srag/dic](https://packagist.org/packages/srag/dic)
+* [srag/dclextensions](https://packagist.org/packages/srag/dclextension)
 * [srag/jasperreport](https://packagist.org/packages/srag/jasperreport)
 * [srag/jiracurl](https://packagist.org/packages/srag/jiracurl)
 * [srag/removeplugindataconfirm](https://packagist.org/packages/srag/removeplugindataconfirm)
