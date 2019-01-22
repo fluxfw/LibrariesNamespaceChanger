@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.5.1]
+- Fixes
+
 ## [0.5.0]
 - Added GitCurl
 
