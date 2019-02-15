@@ -49,7 +49,7 @@ Please use it for further development!
 * Adjustment suggestions by pull requests on https://git.studer-raimann.ch/ILIAS/Plugins/LibrariesNamespaceChanger/tree/develop
 * Adjustment suggestions which are not yet worked out in detail by Jira tasks under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
 * Bug reports under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
-* For external users please send an email to support-custom1@studer-raimann.ch
+* For external users you can report it at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LNAMESPACECHANGER
 
 ### Development
 If you want development in this library you should install this library like follow:
