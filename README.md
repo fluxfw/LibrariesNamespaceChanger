@@ -50,13 +50,3 @@ Please use it for further development!
 * Adjustment suggestions which are not yet worked out in detail by Jira tasks under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
 * Bug reports under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
 * For external users you can report it at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LNAMESPACECHANGER
-
-### Development
-If you want development in this library you should install this library like follow:
-
-Start at your ILIAS root directory
-```bash
-mkdir -p Customizing/global/libraries
-cd Customizing/global/libraries
-git clone -b develop git@git.studer-raimann.ch:ILIAS/Plugins/LibrariesNamespaceChanger.git LibrariesNamespaceChanger
-```
