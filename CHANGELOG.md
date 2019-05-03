@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.6.0]
+- PHP7Backdrop
+
 ## [0.5.3]
 - Notifications4Plugin
 
