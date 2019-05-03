@@ -44,7 +44,7 @@ It support the follow libraries:
 ### php7backport
 If your plugin needs a PHP 5.6 compatible of version of the library, you can also add additionally the follow composer script:
 ```json
- "post-update-cmd": "srag\\LibrariesNamespaceChanger\\PHP7Backdrop::PHP7Backdrop"
+ "post-update-cmd": "srag\\LibrariesNamespaceChanger\\PHP7Backport::PHP7Backport"
 ```
 
 It uses the https://github.com/ondrejbouda/php7backport.git repo, but provides it as a composer script and patches it, amongst other things, it fix interfaces
