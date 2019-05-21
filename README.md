@@ -36,6 +36,7 @@ It support the follow libraries:
 * [srag/dclextensions](https://packagist.org/packages/srag/dclextension)
 * [srag/dic](https://packagist.org/packages/srag/dic)
 * [srag/gitcurl](https://packagist.org/packages/srag/gitcurl)
+* [srag/iliascomponent](https://packagist.org/packages/srag/iliascomponent)
 * [srag/jasperreport](https://packagist.org/packages/srag/jasperreport)
 * [srag/jiracurl](https://packagist.org/packages/srag/jiracurl)
 * [srag/notifications4plugin](https://packagist.org/packages/srag/notifications4plugin)

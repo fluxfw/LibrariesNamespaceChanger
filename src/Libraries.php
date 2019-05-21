@@ -24,6 +24,7 @@ final class Libraries {
 		"DclExtension" => "DclExtension",
 		"DIC" => "DIC",
 		"GitCurl" => "GitCurl",
+		"IliasComponent" => "IliasComponent",
 		"JasperReport" => "JasperReport",
 		"JiraCurl" => "JiraCurl",
 		"Notifications4Plugin" => "Notifications4Plugin",
