@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.6.2]
+- IliasComponent
+
 ## [0.6.1]
 - PHP7Backport
 
