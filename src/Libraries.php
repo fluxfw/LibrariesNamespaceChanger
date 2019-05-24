@@ -25,6 +25,8 @@ final class Libraries {
 		"DIC" => "DIC",
 		"GitCurl" => "GitCurl",
 		"IliasComponent" => "IliasComponent",
+		"IliasComponentCourse" => "IliasComponentCourse",
+		"IliasComponentUser" => "IliasComponentUser",
 		"JasperReport" => "JasperReport",
 		"JiraCurl" => "JiraCurl",
 		"Notifications4Plugin" => "Notifications4Plugin",
