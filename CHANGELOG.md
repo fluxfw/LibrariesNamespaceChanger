@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.6.4]
+- IliasComponentCourse/IliasComponentUser
+
 ## [0.6.3]
 - XML files
 
