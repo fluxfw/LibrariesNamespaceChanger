@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.6.3]
+- XML files
+
 ## [0.6.2]
 - IliasComponent
 
