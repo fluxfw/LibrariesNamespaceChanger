@@ -41,6 +41,7 @@ It support the follow libraries:
 * [srag/jiracurl](https://packagist.org/packages/srag/jiracurl)
 * [srag/notifications4plugin](https://packagist.org/packages/srag/notifications4plugin)
 * [srag/removeplugindataconfirm](https://packagist.org/packages/srag/removeplugindataconfirm)
+* [srag/tableui](https://packagist.org/packages/srag/tableui)
 
 ### php7backport
 If your plugin needs a PHP 5.6 compatible of version of the library, you can also add additionally the follow composer script:
