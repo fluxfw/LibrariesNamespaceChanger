@@ -30,6 +30,7 @@ So you can force to use your libraries classes in the `vendor` folder of your pl
 
 It support the follow libraries:
 * [srag/activerecordconfig](https://packagist.org/packages/srag/activerecordconfig)
+* [srag/assessmentquestion](https://packagist.org/packages/srag/assessmentquestion)
 * [srag/bexiocurl](https://packagist.org/packages/srag/bexiocurl)
 * [srag/commentsui](https://packagist.org/packages/srag/commentsui)
 * [srag/custominputguis](https://packagist.org/packages/srag/custominputguis)

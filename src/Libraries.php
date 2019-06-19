@@ -18,6 +18,7 @@ final class Libraries {
 	 */
 	const LIBRARIES = [
 		"ActiveRecordConfig" => "ActiveRecordConfig",
+		"AssessmentQuestion" => "AssessmentQuestion",
 		"BexioCurl" => "BexioCurl",
 		"CommentsUI" => "CommentsUI",
 		"CustomInputGUIs" => "CustomInputGUIs",
