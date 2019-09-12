@@ -20,7 +20,7 @@ final class Libraries {
 		"ActiveRecordConfig" => "ActiveRecordConfig",
 		"AssessmentQuestion" => "AssessmentQuestion",
 		"BexioCurl" => "BexioCurl",
-		"CommentsUI" => "CommentsUI",,
+		"CommentsUI" => "CommentsUI",
 		"cqrs" => "cqrs",
 		"CustomInputGUIs" => "CustomInputGUIs",
 		"DataTable" => "DataTable",
