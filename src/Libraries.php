@@ -20,7 +20,8 @@ final class Libraries {
 		"ActiveRecordConfig" => "ActiveRecordConfig",
 		"AssessmentQuestion" => "AssessmentQuestion",
 		"BexioCurl" => "BexioCurl",
-		"CommentsUI" => "CommentsUI",
+		"CommentsUI" => "CommentsUI",,
+		"cqrs" => "cqrs",
 		"CustomInputGUIs" => "CustomInputGUIs",
 		"DataTable" => "DataTable",
 		"DclExtension" => "DclExtension",
@@ -33,8 +34,7 @@ final class Libraries {
 		"JiraCurl" => "JiraCurl",
 		"Notifications4Plugin" => "Notifications4Plugin",
 		"RemovePluginDataConfirm" => "RemovePluginDataConfirm",
-		"TableUI" => "TableUI",
-		"CQRS" => "CQRS"
+		"TableUI" => "TableUI"
 	];
 
 
