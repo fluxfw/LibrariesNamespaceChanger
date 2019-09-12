@@ -33,6 +33,7 @@ It support the follow libraries:
 * [srag/assessmentquestion](https://packagist.org/packages/srag/assessmentquestion)
 * [srag/bexiocurl](https://packagist.org/packages/srag/bexiocurl)
 * [srag/commentsui](https://packagist.org/packages/srag/commentsui)
+* [srag/cqrs](https://packagist.org/packages/srag/cqrs)
 * [srag/custominputguis](https://packagist.org/packages/srag/custominputguis)
 * [srag/dclextensions](https://packagist.org/packages/srag/dclextension)
 * [srag/dic](https://packagist.org/packages/srag/dic)

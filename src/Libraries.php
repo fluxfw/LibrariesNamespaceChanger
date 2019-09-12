@@ -21,6 +21,7 @@ final class Libraries {
 		"AssessmentQuestion" => "AssessmentQuestion",
 		"BexioCurl" => "BexioCurl",
 		"CommentsUI" => "CommentsUI",
+		"cqrs" => "cqrs",
 		"CustomInputGUIs" => "CustomInputGUIs",
 		"DataTable" => "DataTable",
 		"DclExtension" => "DclExtension",
