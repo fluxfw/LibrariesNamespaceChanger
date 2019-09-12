@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.6.8]
+- CQRS
+
 ## [0.6.7]
 - DataTable
 
