@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.6.13]
+- Fix may PHP7Backport running again
+
 ## [0.6.12]
 - Fix may PHP7Backport running again
 
