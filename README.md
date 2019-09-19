@@ -57,7 +57,8 @@ It uses the https://github.com/ondrejbouda/php7backport.git repo, but provides i
 * PHP >=5.6
 
 ### Adjustment suggestions
-* Adjustment suggestions by pull requests
-* Adjustment suggestions which are not yet worked out in detail by Jira tasks under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
-* Bug reports under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
-* For external users you can report it at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LNAMESPACECHANGER
+* External users can report suggestions and bugs at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LNAMESPACECHANGER
+* Adjustment suggestions by pull requests via github
+* Customer of studer + raimann ag: 
+	* Adjustment suggestions which are not yet worked out in detail by Jira tasks under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
+	* Bug reports under https://jira.studer-raimann.ch/projects/LNAMESPACECHANGER
