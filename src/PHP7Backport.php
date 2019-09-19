@@ -97,11 +97,11 @@ final class PHP7Backport
 
         exec("git clone -b master " . escapeshellarg(self::PHP7BACKPORT_REPO) . " " . escapeshellarg(self::TEMP_FOLDER_PHP7BACKPORT));
 
-        // Then install the dependencies
-        exec("composer install -d " . escapeshellarg(self::TEMP_FOLDER_PHP7BACKPORT));
-
         // Then apply the patches
         exec("git -C " . escapeshellarg(self::TEMP_FOLDER_PHP7BACKPORT) . " apply " . escapeshellarg(self::PHP7BACKPORT_PATCH));
+
+        // Then install the dependencies
+        exec("composer install -d " . escapeshellarg(self::TEMP_FOLDER_PHP7BACKPORT));
 
         // Empty libraries tmp folder
         if (file_exists(self::TEMP_FOLDER_LIBRARIES)) {
