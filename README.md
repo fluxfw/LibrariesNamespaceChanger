@@ -43,6 +43,7 @@ It support the follow libraries:
 * [srag/jiracurl](https://packagist.org/packages/srag/jiracurl)
 * [srag/notifications4plugin](https://packagist.org/packages/srag/notifications4plugin)
 * [srag/removeplugindataconfirm](https://packagist.org/packages/srag/removeplugindataconfirm)
+* [srag/requireddata](https://packagist.org/packages/srag/requireddata)
 * [srag/tableui](https://packagist.org/packages/srag/tableui)
 
 ### php7backport
