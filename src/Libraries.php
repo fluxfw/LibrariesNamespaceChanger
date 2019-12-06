@@ -36,6 +36,7 @@ final class Libraries
             "JiraCurl"                => "JiraCurl",
             "Notifications4Plugin"    => "Notifications4Plugin",
             "RemovePluginDataConfirm" => "RemovePluginDataConfirm",
+            "RequiredData"            => "RequiredData",
             "TableUI"                 => "TableUI"
         ];
 
