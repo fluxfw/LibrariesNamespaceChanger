@@ -17,7 +17,7 @@ final class LibrariesNamespaceChanger
 {
 
     /**
-     * @var self
+     * @var self|null
      */
     private static $instance = null;
     /**

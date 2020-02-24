@@ -43,7 +43,7 @@ final class PHP7Backport
      */
     const TEMP_FOLDER_LIBRARIES = "/tmp/php7backport_srag";
     /**
-     * @var self
+     * @var self|null
      *
      * @deprecated
      */
