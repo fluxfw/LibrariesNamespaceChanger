@@ -1,5 +1,8 @@
 # Changelog
 
+## [x]
+- Min. PHP 7.0
+
 ## [0.7.0]
 - Support all srag libraries
 

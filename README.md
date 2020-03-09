@@ -40,7 +40,7 @@ If your plugin needs a PHP 5.6 compatible of version of the library, you can als
 It uses the https://github.com/ondrejbouda/php7backport.git repo, but provides it as a composer script and patches it, amongst other things, it fix interfaces
 
 ### Requirements
-* PHP >=5.6
+* PHP >=7.0
 
 ### Adjustment suggestions
 * External users can report suggestions and bugs at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LNAMESPACECHANGER
