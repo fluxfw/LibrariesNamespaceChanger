@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.8.0]
+- Min. PHP 7.0
+- PHP72Backport
+
 ## [0.7.0]
 - Support all srag libraries
 
