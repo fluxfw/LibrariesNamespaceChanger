@@ -5,7 +5,7 @@ namespace srag\LibrariesNamespaceChanger;
 use Composer\Script\Event;
 
 /**
- * Class PHP72Backport
+ * Class RemovePHP72Backport
  *
  * @package srag\LibrariesNamespaceChanger
  *
@@ -13,13 +13,9 @@ use Composer\Script\Event;
  *
  * @internal
  */
-final class PHP72Backport
+final class RemovePHP72Backport
 {
 
-    const REGEXP_EXPRESSION = "[A-Za-z0-9_\":\s]+";
-    const REGEXP_FUNCTION = "function\s*(" . self::REGEXP_NAME . ")?\s*\((" . self::REGEXP_PARAM . ")?(," . self::REGEXP_PARAM . ")*\)(\s*(\/\*)?\s*:\s*\??" . self::REGEXP_NAME . "\s*(\*\/)?)?";
-    const REGEXP_NAME = "[A-Za-z_][A-Za-z0-9_]*";
-    const REGEXP_PARAM = "\s*(\/\*)?\s*\??\s*(" . self::REGEXP_NAME . ")?\s*(\*\/)?\s*\\$" . self::REGEXP_NAME . "(\s*=\s*" . self::REGEXP_EXPRESSION . ")?\s*";
     /**
      * @var self|null
      */
@@ -54,9 +50,9 @@ final class PHP72Backport
      *
      * @internal
      */
-    public static function PHP72Backport(Event $event)/*: void*/
+    public static function RemovePHP72Backport(Event $event)/*: void*/
     {
-        self::getInstance($event)->doPHP72Backport();
+        self::getInstance($event)->doRemovePHP72Backport();
     }
 
 
@@ -67,7 +63,7 @@ final class PHP72Backport
 
 
     /**
-     * PHP72Backport constructor
+     * RemovePHP72Backport constructor
      *
      * @param Event $event
      */
@@ -80,7 +76,7 @@ final class PHP72Backport
     /**
      *
      */
-    private function doPHP72Backport()/*: void*/
+    private function doRemovePHP72Backport()/*: void*/
     {
         $files = [];
 
@@ -89,7 +85,7 @@ final class PHP72Backport
         foreach ($files as $file) {
             $code = file_get_contents($file);
 
-            $code = $this->convertPHP72To70($code);
+            $code = $this->removeConvertPHP72To70($code);
 
             file_put_contents($file, $code);
         }
@@ -101,26 +97,26 @@ final class PHP72Backport
      *
      * @return string
      */
-    protected function convertPHP72To70(string $code) : string
+    protected function removeConvertPHP72To70(string $code) : string
     {
         // Run for each found function
-        $new_code = preg_replace_callback("/(" . self::REGEXP_FUNCTION . ")/", function (array $matches) : string {
+        $new_code = preg_replace_callback("/(" . PHP72Backport::REGEXP_FUNCTION . ")/", function (array $matches) : string {
             $function = $matches[0];
 
             // : void
-            $function = preg_replace("/(\))(\s*:\s*void)/", '$1/*$2*/', $function);
+            $function = preg_replace("/(\)\s*)\/\*(\s*:\s*void\s*)\*\//", '$1$2', $function);
 
             // : object
-            $function = preg_replace("/(\))(\s*:\s*object)/", '$1/*$2*/', $function);
+            $function = preg_replace("/(\)\s*)\/\*(\s*:\s*object\s*)\*\//", '$1$2', $function);
 
             // : ?type
-            $function = preg_replace("/(\))(\s*:\s*\?\s*" . self::REGEXP_NAME . ")/", '$1/*$2*/', $function);
+            $function = preg_replace("/(\)\s*)\/\*(\s*:\s*\?\s*" . PHP72Backport::REGEXP_NAME . "\s*)\*\//", '$1$2', $function);
 
             // object $param
-            $function = preg_replace("/([(,]\s*)(object)(\s*\\$" . self::REGEXP_NAME . ")/", '$1/*$2*/$3', $function);
+            $function = preg_replace("/([(,]\s*)\/\*(\s*object\s*)\*\/(\s*\\$" . PHP72Backport::REGEXP_NAME . ")/", '$1$2$3', $function);
 
             // ?type $param
-            $function = preg_replace("/([(,]\s*)(\?\s*" . self::REGEXP_NAME . ")(\s*\\$" . self::REGEXP_NAME . ")/", '$1/*$2*/$3', $function);
+            $function = preg_replace("/([(,]\s*)\/\*(\s*\?\s*" . PHP72Backport::REGEXP_NAME . "\s*)\*\/(\s*\\$" . PHP72Backport::REGEXP_NAME . ")/", '$1$2$3', $function);
 
             return $function;
         }, $code);
