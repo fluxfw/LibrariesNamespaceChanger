@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.8.1]
+- Fix
+
 ## [0.8.0]
 - Min. PHP 7.0
 - PHP72Backport
