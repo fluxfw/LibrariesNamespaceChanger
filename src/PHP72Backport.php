@@ -19,7 +19,7 @@ final class PHP72Backport
     const REGEXP_EXPRESSION = "[A-Za-z0-9_\":\s]+";
     const REGEXP_FUNCTION = "function\s*(" . self::REGEXP_NAME . ")?\s*\((" . self::REGEXP_PARAM . ")?(," . self::REGEXP_PARAM . ")*\)(\s*:\s*\??" . self::REGEXP_NAME . "\s*)?";
     const REGEXP_NAME = "[A-Za-z_][A-Za-z0-9_]*";
-    const REGEXP_PARAM = "\s*\??\s*(" . self::REGEXP_NAME . ")?\s*\\$" . self::REGEXP_NAME . "(\s*=\s*" . self::REGEXP_EXPRESSION . ")?\s*";
+    const REGEXP_PARAM = "\s*(\\\*)?\s*\??\s*(" . self::REGEXP_NAME . ")?\s*(\*\\)?\s*\\$" . self::REGEXP_NAME . "(\s*=\s*" . self::REGEXP_EXPRESSION . ")?\s*";
     /**
      * @var self|null
      */
