@@ -40,6 +40,8 @@ If your plugin needs a PHP 7.0 compatible of version of a PHP 7.2/7.1 library, y
     ]
 ```
 
+It works with RegExp and affects your whole plugin workspace (`classes`, `src`, `vendor`, ...)
+
 ### php7backport
 If your plugin needs a PHP 5.6 compatible of version of a PHP 7.0 library, you can also add additionally the follow composer script:
 ```json
