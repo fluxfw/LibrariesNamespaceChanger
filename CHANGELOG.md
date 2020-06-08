@@ -1,5 +1,8 @@
 # Changelog
 
+## [x]
+- `GeneratePluginPhp`
+
 ## [0.8.7]
 - Fix
 

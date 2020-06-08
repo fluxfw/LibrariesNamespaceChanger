@@ -52,6 +52,15 @@ If your plugin needs a PHP 5.6 compatible of version of a PHP 7.0 library, you c
 
 It uses the https://github.com/ondrejbouda/php7backport.git repo, but provides it as a composer script and patches it, amongst other things, it fix interfaces
 
+## GeneratePluginPhp
+Generate `plugin.php` and `plugin.xml` for ILIAS plugins from `composer.json`
+```json
+ "pre-autoload-dump": [
+    ...,
+      "srag\\LibrariesNamespaceChanger\\GeneratePluginPhp::generatePluginPhp"
+    ]
+```
+
 ## Requirements
 * PHP >=7.0
 
