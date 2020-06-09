@@ -85,11 +85,14 @@ final class UpdatePluginReadme
         $plugin_composer_json = json_decode(file_get_contents(self::$plugin_root . "/" . self::PLUGIN_COMPOSER_JSON));
 
         $readme = file_get_contents(self::$plugin_root . "/" . self::PLUGIN_README);
+
         $readme = preg_replace("/[*\-]\s*ILIAS\s*[0-9.\- ]+\s*-\s*[0-9.]+/",
             "* ILIAS " . $plugin_composer_json->ilias_plugin->ilias_min_version . " - " . $plugin_composer_json->ilias_plugin->ilias_max_version,
             $readme);
+
         $readme = preg_replace("/[*\-]\s*PHP\s*[0-9.\- <=>]+/", "* PHP " . $plugin_composer_json->require->php,
             $readme);
+
         file_put_contents(self::$plugin_root . "/" . self::PLUGIN_README, $readme);
     }
 }
