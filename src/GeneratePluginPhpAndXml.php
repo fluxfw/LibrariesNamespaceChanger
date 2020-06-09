@@ -8,7 +8,7 @@ use Composer\Script\Event;
 use stdClass;
 
 /**
- * Class GeneratePluginPhp
+ * Class GeneratePluginPhpAndXml
  *
  * @package srag\LibrariesNamespaceChanger
  *
@@ -16,7 +16,7 @@ use stdClass;
  *
  * @internal
  */
-final class GeneratePluginPhp
+final class GeneratePluginPhpAndXml
 {
 
     const PLUGIN_COMPOSER_JSON = "composer.json";
@@ -53,13 +53,13 @@ final class GeneratePluginPhp
      *
      * @internal
      */
-    public static function generatePluginPhp(Event $event)/*: void*/
+    public static function generatePluginPhpAndXml(Event $event)/*: void*/
     {
         self::$plugin_root = rtrim(Closure::bind(function () : string {
             return $this->baseDir;
         }, $event->getComposer()->getConfig(), Config::class)(), "/");
 
-        self::getInstance($event)->doGeneratePluginPhp();
+        self::getInstance($event)->doGeneratePluginPhpAndXml();
     }
 
 
@@ -70,7 +70,7 @@ final class GeneratePluginPhp
 
 
     /**
-     * GeneratePluginPhp constructor
+     * GeneratePluginPhpAndXml constructor
      *
      * @param Event $event
      */
@@ -83,7 +83,7 @@ final class GeneratePluginPhp
     /**
      *
      */
-    private function doGeneratePluginPhp()/*: void*/
+    private function doGeneratePluginPhpAndXml()/*: void*/
     {
         $plugin_composer_json = json_decode(file_get_contents(self::$plugin_root . "/" . self::PLUGIN_COMPOSER_JSON));
 
