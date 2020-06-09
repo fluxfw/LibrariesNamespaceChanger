@@ -61,6 +61,15 @@ Generate `plugin.php` and `plugin.xml` for ILIAS plugins from `composer.json`
     ]
 ```
 
+## UpdatePluginReadme
+Update ILIAS versions and PHP versions in `README.md`
+```json
+ "pre-autoload-dump": [
+    ...,
+     "srag\\LibrariesNamespaceChanger\\UpdatePluginReadme::updatePluginReadme"
+    ]
+```
+
 Complete your `composer.json` with
 ```json
 ...
