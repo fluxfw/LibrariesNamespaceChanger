@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.9.6]
+- `GeneratePluginPhpAndXml`: No empty `<events>`
+
 ## [0.9.5]
 - `GeneratePluginPhpAndXml`: `learning_progress` and `supports_export`
 
