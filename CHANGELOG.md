@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.9.5]
+- `GeneratePluginPhpAndXml`: `learning_progress` and `supports_export`
+
 ## [0.9.4]
 - Fix
 
