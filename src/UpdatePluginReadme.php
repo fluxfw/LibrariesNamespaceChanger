@@ -28,20 +28,20 @@ final class UpdatePluginReadme
      * @var string
      */
     private static $plugin_root = "";
+    /**
+     * @var Event
+     */
+    private $event;
 
 
     /**
-     * @param Event $event
+     * UpdatePluginReadme constructor
      *
-     * @return self
+     * @param Event $event
      */
-    private static function getInstance(Event $event) : self
+    private function __construct(Event $event)
     {
-        if (self::$instance === null) {
-            self::$instance = new self($event);
-        }
-
-        return self::$instance;
+        $this->event = $event;
     }
 
 
@@ -61,19 +61,17 @@ final class UpdatePluginReadme
 
 
     /**
-     * @var Event
-     */
-    private $event;
-
-
-    /**
-     * UpdatePluginReadme constructor
-     *
      * @param Event $event
+     *
+     * @return self
      */
-    private function __construct(Event $event)
+    private static function getInstance(Event $event) : self
     {
-        $this->event = $event;
+        if (self::$instance === null) {
+            self::$instance = new self($event);
+        }
+
+        return self::$instance;
     }
 
 

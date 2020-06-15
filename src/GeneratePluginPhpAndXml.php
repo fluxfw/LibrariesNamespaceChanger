@@ -31,20 +31,20 @@ final class GeneratePluginPhpAndXml
      * @var string
      */
     private static $plugin_root = "";
+    /**
+     * @var Event
+     */
+    private $event;
 
 
     /**
-     * @param Event $event
+     * GeneratePluginPhpAndXml constructor
      *
-     * @return self
+     * @param Event $event
      */
-    private static function getInstance(Event $event) : self
+    private function __construct(Event $event)
     {
-        if (self::$instance === null) {
-            self::$instance = new self($event);
-        }
-
-        return self::$instance;
+        $this->event = $event;
     }
 
 
@@ -64,19 +64,17 @@ final class GeneratePluginPhpAndXml
 
 
     /**
-     * @var Event
-     */
-    private $event;
-
-
-    /**
-     * GeneratePluginPhpAndXml constructor
-     *
      * @param Event $event
+     *
+     * @return self
      */
-    private function __construct(Event $event)
+    private static function getInstance(Event $event) : self
     {
-        $this->event = $event;
+        if (self::$instance === null) {
+            self::$instance = new self($event);
+        }
+
+        return self::$instance;
     }
 
 
