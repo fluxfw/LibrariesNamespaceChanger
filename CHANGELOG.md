@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.9.7]
+- Add some regexp to `PHP72Backport`
+- Skip some folders
+
 ## [0.9.6]
 - `GeneratePluginPhpAndXml`: No empty `<events>`
 
