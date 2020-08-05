@@ -91,6 +91,8 @@ final class UpdatePluginReadme
         $readme = preg_replace("/[*\-]\s*PHP\s*[0-9.\- <=>]+/", "* PHP " . $plugin_composer_json->require->php,
             $readme);
 
+        $readme = preg_replace("/Customizing\/global\/plugins\/[A-Za-z]+\/[A-Za-z]+\/[A-Za-z]+/", "Customizing/global/plugins/" . $plugin_composer_json->ilias_plugin->slot, $readme);
+
         file_put_contents(self::$plugin_root . "/" . self::PLUGIN_README, $readme);
     }
 }
