@@ -94,7 +94,7 @@ Complete your `composer.json` with
 ```
 
 ## UpdatePluginReadme
-Update ILIAS min./max. version and PHP versions and plugin slot path in `README.md`
+Update ILIAS min./max. versions and min. PHP version and slot path in `README.md`
 ```json
  "pre-autoload-dump": [
     ...,
