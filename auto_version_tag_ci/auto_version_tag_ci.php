@@ -10,7 +10,6 @@ function getEnvironmentVariable(string $variable) : string
 
     if (empty($value)) {
         echo "Environment variable " . $variable . " not set!\n";
-
         die(1);
     }
 
@@ -29,7 +28,8 @@ $changelog_md = file_get_contents(__DIR__ . "/../../../../CHANGELOG.md");
 $changelog_header = "## [" . $version . "]";
 $changelog_header_pos = strpos($changelog_md, $changelog_header);
 if ($changelog_header_pos === false) {
-    die("Changelog for " . $version . " not found!\n");
+    echo "Changelog for " . $version . " not found!\n";
+    die(1);
 }
 $changelog = substr($changelog_md, $changelog_header_pos + strlen($changelog_header));
 $changelog = substr($changelog, 0, strpos($changelog, "\n\n"));
