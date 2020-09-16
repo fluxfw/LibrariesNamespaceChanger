@@ -51,10 +51,10 @@ function gitlabRequest(string $api_url)/* : void*/
 $COMMIT_ID = getEnvironmentVariable("CI_COMMIT_SHA");
 $USER_ID = getEnvironmentVariable("GITLAB_USER_ID");
 
-$composer_json = json_decode(file_get_contents(__DIR__ . "/../../../../composer.json"));
+$composer_json = json_decode(file_get_contents(getcwd() . "/composer.json"));
 $version = $composer_json->version;
 
-$changelog_md = file_get_contents(__DIR__ . "/../../../../CHANGELOG.md");
+$changelog_md = file_get_contents(getcwd() . "/CHANGELOG.md");
 $changelog_header = "## [" . $version . "]";
 $changelog_header_pos = strpos($changelog_md, $changelog_header);
 if ($changelog_header_pos === false) {
