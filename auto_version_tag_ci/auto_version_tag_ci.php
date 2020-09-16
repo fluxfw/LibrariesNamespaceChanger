@@ -68,5 +68,7 @@ $changelog = trim($changelog);
 gitlabRequest("repository/tags?tag_name=" . rawurlencode("v" . $version) . "&ref=" . rawurlencode($COMMIT_ID) . "&message=" . rawurlencode($changelog) . "&release_description="
     . rawurlencode($changelog));
 
+echo "";
+
 gitlabRequest("merge_requests?source_branch=" . rawurlencode("develop") . "&target_branch=" . rawurlencode("master") . "&title=" . rawurlencode("WIP: Develop") . "&assignee_id="
     . rawurlencode($USER_ID));
