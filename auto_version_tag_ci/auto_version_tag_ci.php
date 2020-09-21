@@ -32,7 +32,10 @@ function gitlabRequest(string $api_url, int $expect_status_code)/* : ?string*/
     $response = null;
     $status_code = null;
     try {
-        $curl = curl_init($SERVER_URL . "/api/v4/projects/" . $PROJECT_ID . "/" . $api_url);
+        $request_url = $SERVER_URL . "/api/v4/projects/" . $PROJECT_ID . "/" . $api_url;
+        echo "Request url: " . $request_url . "\n";
+
+        $curl = curl_init($request_url);
         curl_setopt($curl, CURLOPT_HTTPHEADER, ["PRIVATE-TOKEN: " . $AUTO_VERSION_TAG_TOKEN]);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
