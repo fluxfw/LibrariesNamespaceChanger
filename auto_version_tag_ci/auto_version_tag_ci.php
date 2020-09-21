@@ -19,10 +19,11 @@ function getEnvironmentVariable(string $variable) : string
 /**
  * @param string $api_url
  * @param int    $expect_status_code
+ * @param bool   $post
  *
  * @return string|null
  */
-function gitlabRequest(string $api_url, int $expect_status_code)/* : ?string*/
+function gitlabRequest(string $api_url, int $expect_status_code, bool $post = false)/* : ?string*/
 {
     $AUTO_VERSION_TAG_TOKEN = getEnvironmentVariable("AUTO_VERSION_TAG_TOKEN");
     $SERVER_URL = getEnvironmentVariable("CI_SERVER_URL");
@@ -37,7 +38,11 @@ function gitlabRequest(string $api_url, int $expect_status_code)/* : ?string*/
 
         $curl = curl_init($request_url);
         curl_setopt($curl, CURLOPT_HTTPHEADER, ["PRIVATE-TOKEN: " . $AUTO_VERSION_TAG_TOKEN]);
-        curl_setopt($curl, CURLOPT_POST, true);
+
+        if ($post) {
+            curl_setopt($curl, CURLOPT_POST, true);
+        }
+
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         $response = curl_exec($curl);
@@ -90,7 +95,7 @@ if (empty($maintainer_user_id)) {
 $maintainer_user_id = current($maintainer_user_id)["id"];
 
 gitlabRequest("repository/tags?tag_name=" . rawurlencode("v" . $version) . "&ref=" . rawurlencode($COMMIT_ID) . "&message=" . rawurlencode($changelog) . "&release_description="
-    . rawurlencode($changelog), 201);
+    . rawurlencode($changelog), 201, true);
 
 gitlabRequest("merge_requests?source_branch=" . rawurlencode("develop") . "&target_branch=" . rawurlencode("master") . "&title=" . rawurlencode("WIP: Develop") . "&assignee_id="
-    . rawurlencode($maintainer_user_id), 201);
+    . rawurlencode($maintainer_user_id), 201, true);
