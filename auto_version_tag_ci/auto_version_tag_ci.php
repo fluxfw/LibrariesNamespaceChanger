@@ -64,7 +64,6 @@ function gitlabRequest(string $api_url, int $expect_status_code, bool $post = fa
 }
 
 $COMMIT_ID = getEnvironmentVariable("CI_COMMIT_SHA");
-$USER_ID = getEnvironmentVariable("GITLAB_USER_ID");
 
 $composer_json = json_decode(file_get_contents(getcwd() . "/composer.json"));
 $version = $composer_json->version;
