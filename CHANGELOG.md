@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.12.2]
+- Auto migrate `ilias_plugin` to `extra`
+
 ## [0.12.1]
 - Auto migrate `ilias_plugin` to `extra`
 
