@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.12.0]
+- `GeneratePluginReadme`
+- Move `composer.json` > `ilias_plugin` to `composer.json` > `extra` > `ilias_plugin` for match composer shema
+- Make `UpdatePluginReadme` depracated
+
 ## [0.11.3]
 - auto_version_tag_ci
 
