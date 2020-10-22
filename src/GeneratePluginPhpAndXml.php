@@ -231,6 +231,14 @@ require_once __DIR__ . "/vendor/autoload.php";
             $updated_composer_json = true;
         }
 
+        if (isset($this->plugin_composer_json->ilias_plugin)) {
+            $this->plugin_composer_json->extra->ilias_plugin = $this->plugin_composer_json->ilias_plugin;
+
+            unset($this->plugin_composer_json->ilias_plugin);
+
+            $updated_composer_json = true;
+        }
+
         if (empty($this->plugin_composer_json->extra->ilias_plugin)) {
             $this->plugin_composer_json->extra->ilias_plugin = (object) [];
 
