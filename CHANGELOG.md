@@ -1,5 +1,8 @@
 # Changelog
 
+## [x]
+- Translate plugin SLA to english
+
 ## [0.12.2]
 - Auto migrate `ilias_plugin` to `extra`
 
