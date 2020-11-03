@@ -115,15 +115,6 @@ There is a default template, but you can create your own plugin template and use
   ...
 ```
 
-## UpdatePluginReadme (Deprecated)
-Update ILIAS min./max. versions and min. PHP version and slot path in `README.md`
-```json
-  "pre-autoload-dump": [
-    ...,
-     "srag\\LibrariesNamespaceChanger\\UpdatePluginReadme::updatePluginReadme"
-    ]
-```
-
 ## Requirements
 * PHP >=7.0
 
