@@ -4,8 +4,9 @@
   "version": "0.12.2",
   "type": "library",
   "keywords": [
-    "ILIAS",
-    "Libraries"
+    "Changer",
+    "Libraries",
+    "Namespace"
   ],
   "homepage": "https://github.com/studer-raimann/LibrariesNamespaceChanger",
   "license": "GPL-3.0-only",

@@ -1,4 +1,4 @@
-# LibrariesNamespaceChanger Library for ILIAS Plugins
+# LibrariesNamespaceChanger Library
 
 Change the namespace of the libraries on dump-autoload to a plugin specific namespace
 
