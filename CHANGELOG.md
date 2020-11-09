@@ -1,6 +1,6 @@
 # Changelog
 
-## [x]
+## [0.13.0]
 - Move GeneratePluginInfosHelper to separate package
 
 ## [0.12.2]
