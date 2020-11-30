@@ -70,5 +70,6 @@ It uses the https://github.com/ondrejbouda/php7backport.git repo, but provides i
 
 ## Adjustment suggestions
 
-* External users can report suggestions and bugs at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LNAMESPACECHANGER
-* Adjustment suggestions by pull requests via github
+You can report bugs or suggestions at https://plugins.studer-raimann.ch/goto.php?target=uihk_srsu_LNAMESPACECHANGER
+
+There is no guarantee this can be fixed or implemented
