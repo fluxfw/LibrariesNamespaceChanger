@@ -7,9 +7,9 @@
   },
   "type": "library",
   "keywords": [
-    "Changer",
-    "Libraries",
-    "Namespace"
+    "changer",
+    "libraries",
+    "namespace"
   ],
   "homepage": "https://github.com/studer-raimann/LibrariesNamespaceChanger",
   "license": "GPL-3.0-only",
