@@ -116,7 +116,7 @@ final class LibrariesNamespaceChanger
                 continue;
             }
 
-            $namespaces = array_map(function (string $namespace) use ($plugin_name): string {
+            $namespaces = array_map(function (string $namespace) use ($plugin_name) : string {
                 if (substr($namespace, -1) === "\\") {
                     $namespace = substr($namespace, 0, -1);
                 }
