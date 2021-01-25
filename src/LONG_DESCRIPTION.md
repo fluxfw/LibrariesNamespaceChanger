@@ -34,6 +34,8 @@ It support the follow libraries:
 
 ## PHP72Backport
 
+PHP72Backport is deprecated and will be removed!
+
 If your plugin needs a PHP 7.0 compatible of version of a PHP 7.2/7.1 library, you can also add additionally the follow composer script:
 
 ```json
@@ -46,6 +48,8 @@ If your plugin needs a PHP 7.0 compatible of version of a PHP 7.2/7.1 library, y
 It works with RegExp and affects your whole plugin workspace (`classes`, `src`, `vendor`, ...)
 
 ## php7backport
+
+PHP7Backport is deprecated and will be removed!
 
 If your plugin needs a PHP 5.6 compatible of version of a PHP 7.0 library, you can also add additionally the follow composer script:
 
