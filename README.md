@@ -41,6 +41,16 @@ So you can force to use your libraries classes in the `vendor` folder of your pl
 It support the follow libraries:
 * [srag libraries](https://packagist.org/packages/srag)
 
+### In code
+
+```php
+...
+use srag\LibrariesNamespaceChanger\x\LibrariesNamespaceChanger; 
+...
+LibrariesNamespaceChanger::getInstance()->doRewriteLibrariesNamespaces(string $project_root);
+...
+```
+
 ## PHP72Backport
 
 PHP72Backport is deprecated and will be removed!

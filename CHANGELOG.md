@@ -1,6 +1,7 @@
 # Changelog
 
-## [x]
+## [0.15.0]
+- Possibility to run without composer script
 - Deprecate `PHP72Backport`
 
 ## [0.14.2]
