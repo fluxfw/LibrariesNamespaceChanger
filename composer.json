@@ -12,7 +12,7 @@
     "libraries",
     "namespace"
   ],
-  "homepage": "https://github.com/studer-raimann/LibrariesNamespaceChanger",
+  "homepage": "https://github.com/fluxfw/LibrariesNamespaceChanger",
   "license": "GPL-3.0-only",
   "authors": [
     {
